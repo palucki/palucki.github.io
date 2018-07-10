@@ -100,6 +100,6 @@ a.no-style:active {
 
 .enlarge:hover{
     font-size:3.5em;
-    transition: 0.5s ease-out;
+    transition: 0.1s ease-out;
 }
 
