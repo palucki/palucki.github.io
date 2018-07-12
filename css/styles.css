@@ -80,7 +80,7 @@ a.no-style:visited {
 }
 
 a.no-style:hover {
-    color: hotpink;
+    color: darkorange;
 }
 
 a.no-style:active {
@@ -106,7 +106,13 @@ a.no-style:active {
 /* Style for our fullpage
 * --------------------------------------- */
 h1{
-    font-size: 5em;
+    font-size: 4em;
+    font-family: 'Reem Kufi', sans-serif;
+    margin:0;
+}
+
+h2{
+    font-size: 3.5em;
     font-family: 'Reem Kufi', sans-serif;
     margin:0;
 }
@@ -126,9 +132,3 @@ h1{
     right: 50px;
 }
 
-
-/* Bottom menu
-* --------------------------------------- */
-#infoMenu li a {
-    color: #fff;
-}
