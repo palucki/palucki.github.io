@@ -154,6 +154,7 @@
             controlArrowColor: '#fff',
             verticalCentered: true,
             sectionsColor : [],
+            sectionsFontColor : [],
             paddingTop: 0,
             paddingBottom: 0,
             fixedElements: null,
@@ -842,6 +843,10 @@
 
             if (typeof options.sectionsColor[index] !==  'undefined') {
                 css(section, {'background-color': options.sectionsColor[index]});
+            }
+            
+            if (typeof options.sectionsFontColor[index] !==  'undefined') {
+                css(section, {'color': options.sectionsFontColor[index]});
             }
 
             if (typeof options.anchors[index] !== 'undefined') {

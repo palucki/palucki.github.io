@@ -103,3 +103,32 @@ a.no-style:active {
     transition: 0.1s ease-out;
 }
 
+/* Style for our fullpage
+* --------------------------------------- */
+h1{
+    font-size: 5em;
+    font-family: 'Reem Kufi', sans-serif;
+    margin:0;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section{
+    text-align:center;
+}
+
+/* Overwriting styles for control arrows for slides
+* --------------------------------------- */
+.controlArrow.prev {
+    left: 50px;
+}
+.controlArrow.next{
+    right: 50px;
+}
+
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu li a {
+    color: #fff;
+}
