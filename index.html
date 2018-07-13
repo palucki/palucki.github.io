@@ -35,63 +35,55 @@
     
 </head>
 <body>
-	<!-- <main> -->
-        <!-- <div class="intro">Hello, I'm Piotr Pałucki</div> -->
-            <!-- <div class="tagline"> software engineer | bassist at <a class="no-style" href="https://www.facebook.com/ThePajX/">the pajx</a> | football lover </div> -->
-            <!-- <!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands --> -->
-            <!-- <div class="icons-social"> -->
-                <!-- <div class="icon-container"><a target="_blank" href="https://github.com/palucki"><i class="enlarge fab fa-github"></i></a></div> -->
-                <!-- <div class="icon-container"><a target="_blank" href="https://www.linkedin.com/in/piotr-palucki/"><i class="enlarge fab fa-linkedin"></i></a></div> -->
-                <!-- <div class="icon-container"><a target="_blank" href="https://www.youtube.com/user/thepajx1/videos"><i class="enlarge fab fa-youtube"></i></a></div> -->
-                <!-- <div class="icon-container"><a target="_blank" href="https://open.spotify.com/artist/3PZvwOehbxrdpIx5OrlbEj"><i class="enlarge fab fa-spotify"></i></a></div> -->
-                <!-- <div class="icon-container"><a target="_blank" href="https://www.facebook.com/lksvpu"><i class="enlarge fas fa-futbol"></i></a></div> -->
-                <!-- <div class="icon-container"><a target="_blank" href="https://www.facebook.com/Black-Hawks-FLS-187294688412459"><i class="enlarge far fa-futbol"></i></a></div> -->
-            <!-- </div> -->
-            <!-- <div class="tagline">click on one of the buttons or scroll to dive into details...</div> -->
-	<!-- </main> -->
-    
     <div id="fullpage">
-        <div class="section " id="section0">
-            <!-- <div class="intro"> -->
+        <div class="section" id="section1">
+            <h1>Inspiring introductory text</h1>
+            <div class="tagline"> software engineer | bassist at <a class="no-style" href="https://www.facebook.com/ThePajX/">the pajx</a> | football lover </div>
+            <!-- <!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
+            <div class="icons-social">
+                <div class="icon-container"><a target="_blank" href="https://github.com/palucki"><i class="enlarge fab fa-github"></i></a></div>
+                <div class="icon-container"><a target="_blank" href="https://www.linkedin.com/in/piotr-palucki/"><i class="enlarge fab fa-linkedin"></i></a></div>
+                <div class="icon-container"><a target="_blank" href="https://www.youtube.com/user/thepajx1/videos"><i class="enlarge fab fa-youtube"></i></a></div>
+                <div class="icon-container"><a target="_blank" href="https://open.spotify.com/artist/3PZvwOehbxrdpIx5OrlbEj"><i class="enlarge fab fa-spotify"></i></a></div>
+                <div class="icon-container"><a target="_blank" href="https://www.facebook.com/lksvpu"><i class="enlarge fas fa-futbol"></i></a></div>
+                <div class="icon-container"><a target="_blank" href="https://www.facebook.com/Black-Hawks-FLS-187294688412459"><i class="enlarge far fa-futbol"></i></a></div>
+            </div>       
+        </div>
+    
+        <div class="section " id="section2">
                 <div class="slide" id="slide1">
                     <h1>Engineer</h1>
-                        <p>Details about current job, interests, realized projects</p>
+                        <div class="tagline"><p>Details about current job, interests, realized projects</p></div>
                 </div>
                 <div class="slide" id="slide2"><h2>Project #1</h2></div>
                 <div class="slide" id="slide3"><h2>Project #2</h2></div>
                 <div class="slide" id="slide4"><h2>Project #3</h2></div>
-                <!-- <h1>Engineer</h1> -->
-                    <!-- <p>Details about current job, interests, realized projects</p> -->
-            <!-- </div> -->
         </div>
-        <div class="section" id="section1">
-            <div class="intro">
-                <h1>Bassist</h1>
-                    <p>Formatted</p>
-            </div>
+        <div class="section" id="section3">
+            <h1>Bassist</h1>
+                <div class="tagline"><p>sometimes</p></div>
         </div>
-        <div class="section" id="section1">
-            <div class="intro">
-                <h1>Contact</h1>
+        <div class="section" id="section4">
+            <h1>Contact</h1>
+                <div class="tagline">
                     <p>Need help with some problem? Interested in one of my projects? Wanna talk?</p>
                     <p>Feel free to contact me.</p>
                     <p><a class="no-style" href="mailto:piotrek.palucki@gmail.com">Click here <i class="far fa-envelope"></i></a></p>
-            </div>
+                </div>
         </div>
-        <div class="section" id="padding"></div>
     </div>
 
 <script type="text/javascript" src="css/fullpage.js"></script>
-
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-        anchors: ['1', '2', '3', '4'],
-        sectionsColor: ['#0277BD', '#FFFFFF', '#0277BD', '#FFFFFF'],
-        sectionsFontColor: ['#FFFFFF', '#0277BD', '#FFFFFF', '#0277BD', '#FFFFFF'],
-        navigation: false,
-        <!-- navigationPosition: 'right', --> not to overlap with arrows in 'Projects'
+        anchors: ['top', '2nd', '3rd', '4th'],
+        sectionsColor: ['#FFFFFF','#0277BD', '#FFFFFF', '#0277BD'],
+        sectionsFontColor: ['#0277BD', '#FFFFFF', '#0277BD', '#FFFFFF', '#0277BD', '#FFFFFF'],
+        navigation: true,
+        navigationPosition: 'right',
+        controlArrows: true,
         <!-- navigationTooltips: ['First page', 'Second page', 'Third page', 'Last page'] --> Removed, does not help
-    });
+    });   
 </script>
     
 </body>

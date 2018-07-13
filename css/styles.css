@@ -43,14 +43,12 @@ main {
 	text-align: center;
 }
 
-main > .intro {
-	font-family: 'Reem Kufi', sans-serif;
-	font-size: 3.75em;
-	font-weight: 600;
+.header {
+    font-family: 'Reem Kufi', sans-serif;
 }
 
-main > .tagline {
-	font-size: 1.5rem;
+.tagline {
+	font-size: 1.25rem;
 	margin: 1.5rem 0;
 	font-weight: 100;
 }
@@ -106,14 +104,15 @@ a.no-style:active {
 /* Style for our fullpage
 * --------------------------------------- */
 h1{
-    font-size: 4em;
     font-family: 'Reem Kufi', sans-serif;
+	font-size: 3.5em;
     margin:0;
+	font-weight: 600;
 }
 
 h2{
-    font-size: 3.5em;
-    font-family: 'Reem Kufi', sans-serif;
+    /* font-size: 3em; */
+
     margin:0;
 }
 
@@ -131,4 +130,3 @@ h2{
 .controlArrow.next{
     right: 50px;
 }
-
