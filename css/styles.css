@@ -2,6 +2,18 @@
 
 html {
 	font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    /* padding: 0 30px; */
+    /* justify-content: center; */
+	/* text-align: center; */
+    
+    /* display: flex; */
+	/* flex-direction: column; */
+	/* min-height: 100vh; */
+	/* justify-content: center; */
+	/* padding: 0 30px; */
+	/* text-align: center; */
 }
 
 @media (min-width: 576px) {
@@ -34,15 +46,6 @@ html {
 
 /* Custom Styles */
 
-main {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	justify-content: center;
-	padding: 0 30px;
-	text-align: center;
-}
-
 .header {
     font-family: 'Reem Kufi', sans-serif;
 }
@@ -53,19 +56,21 @@ main {
 	font-weight: 100;
 }
 
+.projects {
+    text-align:left;
+    padding: 0 10%;
+}
+
+div.projects p {
+    padding: .25em .25em .25em .25em;
+}
+
+div.contact p {
+    padding: .25em .25em .25em .25em;
+}
+
 .icons-social i {
 	padding: 10px;
-}
-
-.devto {
-	margin-bottom: -0.20rem;
-}
-
-.devto svg {
-	margin-bottom: -0.20rem;
-	margin-left: 0.675rem;;
-	width: 2.65rem;
-	height: 2.65rem;
 }
 
 a.no-style:link {
@@ -96,24 +101,23 @@ a.no-style:active {
     margin-left: -40px;
 }
 
-.enlarge:hover{
+.enlarge:hover {
     font-size:3.5em;
     transition: 0.1s ease-out;
 }
 
-/* Style for our fullpage
-* --------------------------------------- */
-h1{
+h1 {
     font-family: 'Reem Kufi', sans-serif;
 	font-size: 3.5em;
     margin:0;
 	font-weight: 600;
 }
 
-h2{
-    /* font-size: 3em; */
-
+h2 {
+    font-family: 'Reem Kufi', sans-serif;
+	font-size: 3em;
     margin:0;
+	font-weight: 600;
 }
 
 /* Centered texts in each section
