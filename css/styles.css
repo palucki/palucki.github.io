@@ -59,6 +59,7 @@ html {
 
 div.projects p {
     padding: .25em .25em .25em .25em;
+    text-indent: 2em;
 }
 
 div.contact p {
