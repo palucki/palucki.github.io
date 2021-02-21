@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello Friend NG</title>
-    <link>https://palucki.github.io/</link>
-    <description>Recent content on Hello Friend NG</description>
+    <title>Notes on Hello Friend NG</title>
+    <link>https://palucki.github.io/note/</link>
+    <description>Recent content in Notes on Hello Friend NG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://palucki.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://palucki.github.io/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Refactoring_legacy</title>
       <link>https://palucki.github.io/note/refactoring_legacy/</link>
@@ -16,15 +16,6 @@
       <guid>https://palucki.github.io/note/refactoring_legacy/</guid>
       <description>Updating / refactoring legacy code Updating legacy code generaly means transforming code to be
  more expressive more readable simpler  Refactoring Which parts requires our attention?  frequent changes (needs to be easily understandable) code that doesn&amp;rsquo;t work code that is presented to new employees places where new features are added  Boy scout rule Time for refactoring Take a half of the time from estimation to improve the code After that, if the code is better - do all the new way If the code is worse - try to think why that happened, remember that, do the old way</description>
-    </item>
-    
-    <item>
-      <title>Hello</title>
-      <link>https://palucki.github.io/post/hello/</link>
-      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://palucki.github.io/post/hello/</guid>
-      <description></description>
     </item>
     
     <item>

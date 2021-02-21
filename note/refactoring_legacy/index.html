@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Updating / refactoring legacy code Updating legacy code generaly means transforming code to be
+ more expressive more readable simpler  Refactoring Which parts requires our attention?  frequent changes (needs to be easily understandable) code that doesn&amp;rsquo;t work code that is presented to new employees places where new features are added  Boy scout rule Time for refactoring Take a half of the time from estimation to improve the code After that, if the code is better - do all the new way If the code is worse - try to think why that happened, remember that, do the old way" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://palucki.github.io/note/refactoring_legacy/" />
+
+
+    <title>
+        
+            Refactoring_legacy :: Hello Friend NG  — A simple theme for Hugo
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Refactoring_legacy">
+<meta itemprop="description" content="Updating / refactoring legacy code Updating legacy code generaly means transforming code to be
+ more expressive more readable simpler  Refactoring Which parts requires our attention?  frequent changes (needs to be easily understandable) code that doesn&rsquo;t work code that is presented to new employees places where new features are added  Boy scout rule Time for refactoring Take a half of the time from estimation to improve the code After that, if the code is better - do all the new way If the code is worse - try to think why that happened, remember that, do the old way"><meta itemprop="datePublished" content="2021-02-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-02-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="467"><meta itemprop="image" content="https://palucki.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://palucki.github.io/"/>
+
+<meta name="twitter:title" content="Refactoring_legacy"/>
+<meta name="twitter:description" content="Updating / refactoring legacy code Updating legacy code generaly means transforming code to be
+ more expressive more readable simpler  Refactoring Which parts requires our attention?  frequent changes (needs to be easily understandable) code that doesn&rsquo;t work code that is presented to new employees places where new features are added  Boy scout rule Time for refactoring Take a half of the time from estimation to improve the code After that, if the code is better - do all the new way If the code is worse - try to think why that happened, remember that, do the old way"/>
+
+
+
+
+    <meta property="og:title" content="Refactoring_legacy" />
+<meta property="og:description" content="Updating / refactoring legacy code Updating legacy code generaly means transforming code to be
+ more expressive more readable simpler  Refactoring Which parts requires our attention?  frequent changes (needs to be easily understandable) code that doesn&rsquo;t work code that is presented to new employees places where new features are added  Boy scout rule Time for refactoring Take a half of the time from estimation to improve the code After that, if the code is better - do all the new way If the code is worse - try to think why that happened, remember that, do the old way" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://palucki.github.io/note/refactoring_legacy/" /><meta property="og:image" content="https://palucki.github.io/"/><meta property="article:section" content="note" />
+<meta property="article:published_time" content="2021-02-21T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-02-21T00:00:00&#43;00:00" /><meta property="og:site_name" content="Hello Friend NG" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-02-21 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello friend ng</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/post/">Posts</a></li><li><a href="/project/">Projects</a></li><li><a href="/note/">Notepad</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://palucki.github.io/note/refactoring_legacy/">Refactoring_legacy</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="updating--refactoring-legacy-code">Updating / refactoring legacy code</h2>
+<p>Updating legacy code generaly means transforming code to be</p>
+<ul>
+<li>more expressive</li>
+<li>more readable</li>
+<li>simpler</li>
+</ul>
+<h3 id="refactoring">Refactoring</h3>
+<h4 id="which-parts-requires-our-attention">Which parts requires our attention?</h4>
+<ul>
+<li>frequent changes (needs to be easily understandable)</li>
+<li>code that doesn&rsquo;t work</li>
+<li>code that is presented to new employees</li>
+<li>places where new features are added</li>
+</ul>
+<h4 id="boy-scout-rule">Boy scout rule</h4>
+<h3 id="time-for-refactoring">Time for refactoring</h3>
+<p>Take a half of the time from estimation to improve the code
+After that, if the code is better - do all the new way
+If the code is worse - try to think why that happened, remember that, do the old way</p>
+<h3 id="i-use-compiler---its-you-friend">I Use compiler - it&rsquo;s you friend</h3>
+<ul>
+<li>do not ignore warnings</li>
+</ul>
+<h3 id="ii-use-correct-c-as-a-c">II Use correct C++ as a C++</h3>
+<ul>
+<li>create small abstractions, small classes, tie variables and logic together under meaningful name</li>
+<li>cleanup &amp; housekeeping - we have RAII
+<ul>
+<li>open / close file(s)</li>
+<li>open / close connection(s)</li>
+<li>acquire / release resources</li>
+<li>(remember to make them non copyable)
+-use polymorphism instead of raw <code>if / else</code> strucutres (eliminates the need to remember to add new branch in several places)
+-<code>const</code> correctness (try making absolutely everything <code>const</code>)
+-don&rsquo;t <code>typedef</code> structs! (it&rsquo;s so C-style)</li>
+</ul>
+</li>
+<li>use C++ casting (easier to find, express intention)
+<ul>
+<li><code>static_cast, dynamic_cast, reinterpret_cast, const_cast</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="iii-use-new-c-features">III Use new C++ features</h3>
+<h4 id="use-auto">Use <code>auto</code></h4>
+<p>Replace old, long declarations with auto (which must be initiailized)</p>
+<h4 id="use-nullptr">Use <code>nullptr</code></h4>
+<p>Use <code>nulltpr</code> to avoid wrong overloads:
+<code>f(NULL)</code> can be deducted as <code>f (int n)</code>  instead of  <code>f(int *n)</code>
+using <code>nullptr</code> prevents such situations, it will never be casted to <code>int</code> !</p>
+<h4 id="use-lambdas">Use lambdas</h4>
+<p>to replace funtion names which are not meaningful / informative:
+<code>bool shouldCount(int i) { return i%7 == 0; }</code> should rather be replaced with lambda</p>
+<h4 id="use-range-based-for-loops">Use range based for loops</h4>
+<p>Generally improves our code, makes it easier to read, protects us from pitfalls
+potential pitfall: using the copy instead of the <code>real</code> obj.</p>
+<h4 id="use--default-delete">Use  <code>=default</code>, <code>=delete</code></h4>
+<p><code>=delete</code> instead of private constructors
+<code>final</code> instead of private constructors
+<code>=default</code> instead of empty, dummy ctor</p>
+<h4 id="use-enum-classes">Use enum classes</h4>
+<p>Use <code>enum class</code> to avoid casting and value mismatch</p>
+<h3 id="iv-use-standard-library">IV Use standard library</h3>
+<ul>
+<li><code>std:;string</code> instead of <code>const char*</code></li>
+<li>use <code>std::vector</code> and <code>std::array</code> instead of C-style arrays</li>
+<li>RAII, rule of zero</li>
+<li>raw pointers are OK, BUT <strong>owning</strong> raw pointers are a NIGTHMARE</li>
+<li>prefer to pass arguments as (const) references, not as pointers</li>
+<li>when printing debug logs - create  <code>toString</code> method instead of logging to file / console directly. Then it&rsquo;ll be easier to change / disable logging</li>
+</ul>
+<h3 id="v-refactoring--reorganizing-code">V Refactoring / reorganizing code</h3>
+<ul>
+<li>avoid <strong>arrow code</strong>:
+<code>if</code>
+&hellip; <code>if</code>
+&hellip; &hellip; <code>if</code> <br>
+&hellip; &hellip; &hellip;     proper action takes place here
+<code>else</code>
+it requires scrolling right
+if you need additional condition - problems 
+change to 
+<code>if</code>
+// report error
+<code>if</code>
+//return error
+OK CODE
+-avoid Wall of declarations , declare as close as possible, near the usage place, use <code>const</code>, use meaningful name</li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://palucki.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-114543867-3 ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
