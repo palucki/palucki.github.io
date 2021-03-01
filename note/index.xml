@@ -14,7 +14,7 @@
       <pubDate>Wed, 24 Feb 2021 23:41:29 +0100</pubDate>
       
       <guid>https://palucki.github.io/note/git/</guid>
-      <description>Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin +youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:</description>
+      <description>Table of contents  Fetch branch (not current) from remote repo (prepare for rebase):        Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin +youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:</description>
     </item>
     
     <item>
@@ -24,9 +24,8 @@
       
       <guid>https://palucki.github.io/note/refactoring_legacy/</guid>
       <description>Note: below you can find my jottings based on Kate Gregory course
- Refactoring legacy code generally means transforming code to be:
- more expressive, more readable, simpler.  Which parts requires our highest attention?
- frequent changes (needs to be easily understandable), code that doesn&amp;rsquo;t work (need to be fixed =&amp;gt; changed), code that is presented to new employees, places where new features are added.  Boy scout rule: Always leave the place cleaner that you&amp;rsquo;ve found it.</description>
+ Table of contents  Introduction  How much time dedicate to refactoring?   Refactoring process  Use compiler - it&amp;rsquo;s you friend Use correct C++ as a C++ Use new C++ features Use standard library Reorganizing code      Introduction Refactoring legacy code generally means transforming code to be:
+ more expressive, more readable, simpler.</description>
     </item>
     
   </channel>

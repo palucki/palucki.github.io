@@ -6,9 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="Note: below you can find my jottings based on Kate Gregory course
- Refactoring legacy code generally means transforming code to be:
- more expressive, more readable, simpler.  Which parts requires our highest attention?
- frequent changes (needs to be easily understandable), code that doesn&amp;rsquo;t work (need to be fixed =&amp;gt; changed), code that is presented to new employees, places where new features are added.  Boy scout rule: Always leave the place cleaner that you&amp;rsquo;ve found it." />
+ Table of contents  Introduction  How much time dedicate to refactoring?   Refactoring process  Use compiler - it&amp;rsquo;s you friend Use correct C&#43;&#43; as a C&#43;&#43; Use new C&#43;&#43; features Use standard library Reorganizing code      Introduction Refactoring legacy code generally means transforming code to be:
+ more expressive, more readable, simpler." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -37,29 +36,26 @@
 
 <meta itemprop="name" content="Refactoring legacy code">
 <meta itemprop="description" content="Note: below you can find my jottings based on Kate Gregory course
- Refactoring legacy code generally means transforming code to be:
- more expressive, more readable, simpler.  Which parts requires our highest attention?
- frequent changes (needs to be easily understandable), code that doesn&rsquo;t work (need to be fixed =&gt; changed), code that is presented to new employees, places where new features are added.  Boy scout rule: Always leave the place cleaner that you&rsquo;ve found it."><meta itemprop="datePublished" content="2021-02-21T00:00:00&#43;00:00" />
+ Table of contents  Introduction  How much time dedicate to refactoring?   Refactoring process  Use compiler - it&rsquo;s you friend Use correct C&#43;&#43; as a C&#43;&#43; Use new C&#43;&#43; features Use standard library Reorganizing code      Introduction Refactoring legacy code generally means transforming code to be:
+ more expressive, more readable, simpler."><meta itemprop="datePublished" content="2021-02-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-02-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="506"><meta itemprop="image" content="https://palucki.github.io/"/>
+<meta itemprop="wordCount" content="535"><meta itemprop="image" content="https://palucki.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://palucki.github.io/"/>
 
 <meta name="twitter:title" content="Refactoring legacy code"/>
 <meta name="twitter:description" content="Note: below you can find my jottings based on Kate Gregory course
- Refactoring legacy code generally means transforming code to be:
- more expressive, more readable, simpler.  Which parts requires our highest attention?
- frequent changes (needs to be easily understandable), code that doesn&rsquo;t work (need to be fixed =&gt; changed), code that is presented to new employees, places where new features are added.  Boy scout rule: Always leave the place cleaner that you&rsquo;ve found it."/>
+ Table of contents  Introduction  How much time dedicate to refactoring?   Refactoring process  Use compiler - it&rsquo;s you friend Use correct C&#43;&#43; as a C&#43;&#43; Use new C&#43;&#43; features Use standard library Reorganizing code      Introduction Refactoring legacy code generally means transforming code to be:
+ more expressive, more readable, simpler."/>
 
 
 
 
     <meta property="og:title" content="Refactoring legacy code" />
 <meta property="og:description" content="Note: below you can find my jottings based on Kate Gregory course
- Refactoring legacy code generally means transforming code to be:
- more expressive, more readable, simpler.  Which parts requires our highest attention?
- frequent changes (needs to be easily understandable), code that doesn&rsquo;t work (need to be fixed =&gt; changed), code that is presented to new employees, places where new features are added.  Boy scout rule: Always leave the place cleaner that you&rsquo;ve found it." />
+ Table of contents  Introduction  How much time dedicate to refactoring?   Refactoring process  Use compiler - it&rsquo;s you friend Use correct C&#43;&#43; as a C&#43;&#43; Use new C&#43;&#43; features Use standard library Reorganizing code      Introduction Refactoring legacy code generally means transforming code to be:
+ more expressive, more readable, simpler." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://palucki.github.io/note/refactoring_legacy/" /><meta property="og:image" content="https://palucki.github.io/"/><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2021-02-21T00:00:00&#43;00:00" />
@@ -93,7 +89,7 @@
     <div class="logo">
         
             <span class="logo__mark">></span>
-            <span class="logo__text">hello friend ng</span>
+            <span class="logo__text">home/palucki</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -143,6 +139,29 @@
                 <blockquote>
 <p>Note: below you can find my jottings based on <a href="https://www.pluralsight.com/courses/cpp-updating-legacy-code">Kate Gregory course</a></p>
 </blockquote>
+<div class="toc">
+Table of contents
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#how-much-time-dedicate-to-refactoring">How much time dedicate to refactoring?</a></li>
+      </ul>
+    </li>
+    <li><a href="#refactoring-process">Refactoring process</a>
+      <ul>
+        <li><a href="#use-compiler---its-you-friend">Use compiler - it&rsquo;s you friend</a></li>
+        <li><a href="#use-correct-c-as-a-c">Use correct C++ as a C++</a></li>
+        <li><a href="#use-new-c-features">Use new C++ features</a></li>
+        <li><a href="#use-standard-library">Use standard library</a></li>
+        <li><a href="#reorganizing-code">Reorganizing code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="introduction">Introduction</h2>
 <p>Refactoring legacy code generally means transforming code to be:</p>
 <ul>
 <li>more expressive,</li>
@@ -157,16 +176,16 @@
 <li>places where new features are added.</li>
 </ul>
 <p>Boy scout rule: <em>Always leave the place cleaner that you&rsquo;ve found it.</em></p>
-<h4 id="how-much-time-dedicate-to-refactoring">How much time dedicate to refactoring?</h4>
+<h3 id="how-much-time-dedicate-to-refactoring">How much time dedicate to refactoring?</h3>
 <p>Take a half of the time from estimation to improve the code
 After that, if the code is better - do all the new way
 If the code is worse - try to think why that happened, remember that, do the old way</p>
-<h3 id="refactoring-process">Refactoring process</h3>
-<h4 id="i-use-compiler---its-you-friend">I Use compiler - it&rsquo;s you friend</h4>
+<h2 id="refactoring-process">Refactoring process</h2>
+<h3 id="use-compiler---its-you-friend">Use compiler - it&rsquo;s you friend</h3>
 <ul>
 <li>do not ignore warnings</li>
 </ul>
-<h4 id="ii-use-correct-c-as-a-c">II Use correct C++ as a C++</h4>
+<h3 id="use-correct-c-as-a-c">Use correct C++ as a C++</h3>
 <ul>
 <li>create small abstractions, small classes,</li>
 <li>tie variables and logic together under meaningful name,</li>
@@ -187,7 +206,7 @@ If the code is worse - try to think why that happened, remember that, do the old
 </ul>
 </li>
 </ul>
-<h4 id="iii-use-new-c-features">III Use new C++ features</h4>
+<h3 id="use-new-c-features">Use new C++ features</h3>
 <ul>
 <li>
 <p>Use <code>auto</code> : replace old, long declarations with auto (also guarantees no unintialized variables)</p>
@@ -220,7 +239,7 @@ potential pitfall: using the copy instead of the <code>real</code> obj.</p>
 <p>Use <code>enum class</code> to avoid casting and value mismatch</p>
 </li>
 </ul>
-<h4 id="iv-use-standard-library">IV Use standard library</h4>
+<h3 id="use-standard-library">Use standard library</h3>
 <ul>
 <li><code>std:;string</code> instead of <code>const char*</code>,</li>
 <li>use <code>std::vector</code> and <code>std::array</code> instead of C-style arrays,</li>
@@ -229,7 +248,7 @@ potential pitfall: using the copy instead of the <code>real</code> obj.</p>
 <li>prefer to pass arguments as (<code>const)</code> references, not as pointers,</li>
 <li>when printing debug logs - create <code>toString()</code> method instead of logging to file / console directly. Then it&rsquo;ll be easier to change / disable logging.</li>
 </ul>
-<h4 id="v-reorganizing-code">V Reorganizing code</h4>
+<h3 id="reorganizing-code">Reorganizing code</h3>
 <ul>
 <li>avoid <strong>arrow code</strong>:</li>
 </ul>
