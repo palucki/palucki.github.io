@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Table of contents  Language elements  tuples getters improvements Generic lambdas &amp;amp;&amp;amp; init capture      Language elements tuples getters improvements ability to access element by type:
+std::get&amp;lt;double&amp;gt;(tuple)  if more than 1 element of this type - compiler error
+ Generic lambdas &amp;amp;&amp;amp; init capture Allow to use auto as parameter type
+[](const auto&amp;amp; lhs, const auto&amp;amp; rhs) {return lhs.length() &amp;lt; rhs.length();} Ability to init variable when capturing to lambda" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://palucki.github.io/note/cpp14/" />
+
+
+    <title>
+        
+            C&#43;&#43;14 :: palucki  — blog &amp; knowledge base
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
+
+
+
+
+
+
+<meta itemprop="name" content="C&#43;&#43;14">
+<meta itemprop="description" content="Table of contents  Language elements  tuples getters improvements Generic lambdas &amp;&amp; init capture      Language elements tuples getters improvements ability to access element by type:
+std::get&lt;double&gt;(tuple)  if more than 1 element of this type - compiler error
+ Generic lambdas &amp;&amp; init capture Allow to use auto as parameter type
+[](const auto&amp; lhs, const auto&amp; rhs) {return lhs.length() &lt; rhs.length();} Ability to init variable when capturing to lambda"><meta itemprop="datePublished" content="2021-04-18T19:29:06&#43;02:00" />
+<meta itemprop="dateModified" content="2021-04-18T19:29:06&#43;02:00" />
+<meta itemprop="wordCount" content="78"><meta itemprop="image" content="https://palucki.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://palucki.github.io/"/>
+
+<meta name="twitter:title" content="C&#43;&#43;14"/>
+<meta name="twitter:description" content="Table of contents  Language elements  tuples getters improvements Generic lambdas &amp;&amp; init capture      Language elements tuples getters improvements ability to access element by type:
+std::get&lt;double&gt;(tuple)  if more than 1 element of this type - compiler error
+ Generic lambdas &amp;&amp; init capture Allow to use auto as parameter type
+[](const auto&amp; lhs, const auto&amp; rhs) {return lhs.length() &lt; rhs.length();} Ability to init variable when capturing to lambda"/>
+
+
+
+
+    <meta property="og:title" content="C&#43;&#43;14" />
+<meta property="og:description" content="Table of contents  Language elements  tuples getters improvements Generic lambdas &amp;&amp; init capture      Language elements tuples getters improvements ability to access element by type:
+std::get&lt;double&gt;(tuple)  if more than 1 element of this type - compiler error
+ Generic lambdas &amp;&amp; init capture Allow to use auto as parameter type
+[](const auto&amp; lhs, const auto&amp; rhs) {return lhs.length() &lt; rhs.length();} Ability to init variable when capturing to lambda" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://palucki.github.io/note/cpp14/" /><meta property="og:image" content="https://palucki.github.io/"/><meta property="article:section" content="note" />
+<meta property="article:published_time" content="2021-04-18T19:29:06&#43;02:00" />
+<meta property="article:modified_time" content="2021-04-18T19:29:06&#43;02:00" /><meta property="og:site_name" content="palucki" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-04-18 19:29:06 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">home/palucki</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/post/">Posts</a></li><li><a href="/project/">Projects</a></li><li><a href="/note/">Notepad</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://palucki.github.io/note/cpp14/">C++14</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <div class="toc">
+Table of contents
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#language-elements">Language elements</a>
+      <ul>
+        <li><a href="#tuples-getters-improvements">tuples getters improvements</a></li>
+        <li><a href="#generic-lambdas--init-capture">Generic lambdas &amp;&amp; init capture</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="language-elements">Language elements</h2>
+<h3 id="tuples-getters-improvements">tuples getters improvements</h3>
+<p>ability to access element by type:</p>
+<pre><code>std::get&lt;double&gt;(tuple)
+</code></pre>
+<blockquote>
+<p>if more than 1 element of this type - compiler error</p>
+</blockquote>
+<h3 id="generic-lambdas--init-capture">Generic lambdas &amp;&amp; init capture</h3>
+<p>Allow to use auto as parameter type</p>
+<pre><code>[](const auto&amp; lhs, const auto&amp; rhs) {
+   return lhs.length() &lt; rhs.length();
+}
+</code></pre>
+<p>Ability to init variable when capturing to lambda</p>
+<pre><code>[u{std::move(p)}] () { }
+
+[u = std::move(p)] () { }</code></pre>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://palucki.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-114543867-3 ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

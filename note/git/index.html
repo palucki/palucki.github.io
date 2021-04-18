@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase):        Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:" />
+<meta name="description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase): Force push only your current branch: Rename local and remote branch Rebase onto Automatically push without setting remote branch manually Set mergetool and difftool Remove untracked files: Reset one merge result (single file) Change all commits in repository to new author    Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -33,21 +33,21 @@
 
 
 <meta itemprop="name" content="Git tips &amp; tricks">
-<meta itemprop="description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase):        Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:"><meta itemprop="datePublished" content="2021-02-24T23:41:29&#43;01:00" />
+<meta itemprop="description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase): Force push only your current branch: Rename local and remote branch Rebase onto Automatically push without setting remote branch manually Set mergetool and difftool Remove untracked files: Reset one merge result (single file) Change all commits in repository to new author    Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:"><meta itemprop="datePublished" content="2021-02-24T23:41:29&#43;01:00" />
 <meta itemprop="dateModified" content="2021-02-24T23:41:29&#43;01:00" />
-<meta itemprop="wordCount" content="221"><meta itemprop="image" content="https://palucki.github.io/"/>
+<meta itemprop="wordCount" content="262"><meta itemprop="image" content="https://palucki.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://palucki.github.io/"/>
 
 <meta name="twitter:title" content="Git tips &amp; tricks"/>
-<meta name="twitter:description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase):        Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:"/>
+<meta name="twitter:description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase): Force push only your current branch: Rename local and remote branch Rebase onto Automatically push without setting remote branch manually Set mergetool and difftool Remove untracked files: Reset one merge result (single file) Change all commits in repository to new author    Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:"/>
 
 
 
 
     <meta property="og:title" content="Git tips &amp; tricks" />
-<meta property="og:description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase):        Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:" />
+<meta property="og:description" content="Table of contents  Fetch branch (not current) from remote repo (prepare for rebase): Force push only your current branch: Rename local and remote branch Rebase onto Automatically push without setting remote branch manually Set mergetool and difftool Remove untracked files: Reset one merge result (single file) Change all commits in repository to new author    Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin &#43;youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://palucki.github.io/note/git/" /><meta property="og:image" content="https://palucki.github.io/"/><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2021-02-24T23:41:29&#43;01:00" />
@@ -132,11 +132,15 @@
 Table of contents
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#fetch-branch-not-current-from-remote-repo-prepare-for-rebase">Fetch branch (not current) from remote repo (prepare for rebase):</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#fetch-branch-not-current-from-remote-repo-prepare-for-rebase">Fetch branch (not current) from remote repo (prepare for rebase):</a></li>
+    <li><a href="#force-push-only-your-current-branch">Force push only your current branch:</a></li>
+    <li><a href="#rename-local-and-remote-branch">Rename local and remote branch</a></li>
+    <li><a href="#rebase-onto">Rebase onto</a></li>
+    <li><a href="#automatically-push-without-setting-remote-branch-manually">Automatically push without setting remote branch manually</a></li>
+    <li><a href="#set-mergetool-and-difftool">Set mergetool and difftool</a></li>
+    <li><a href="#remove-untracked-files">Remove untracked files:</a></li>
+    <li><a href="#reset-one-merge-result-single-file">Reset one merge result (single file)</a></li>
+    <li><a href="#change-all-commits-in-repository-to-new-author">Change all commits in repository to new author</a></li>
   </ul>
 </nav>
 </div>
@@ -144,10 +148,10 @@ Table of contents
 <h2 id="fetch-branch-not-current-from-remote-repo-prepare-for-rebase">Fetch branch (not current) from remote repo (prepare for rebase):</h2>
 <pre><code>git fetch origin release:release
 </code></pre>
-<h4 id="force-push-only-your-current-branch">Force push only your current branch:</h4>
+<h2 id="force-push-only-your-current-branch">Force push only your current branch:</h2>
 <pre><code>git push origin +youBranchName
 </code></pre>
-<h4 id="rename-local-and-remote-branch">Rename local and remote branch</h4>
+<h2 id="rename-local-and-remote-branch">Rename local and remote branch</h2>
 <pre><code># Rename branch locally    
 git branch -m old_branch new_branch
 # Delete the old branch    
@@ -155,7 +159,7 @@ git push origin :old_branch
 # Push the new branch, set local branch to track the new remote
 git push --set-upstream origin new_branch    
 </code></pre>
-<h4 id="rebase-onto">Rebase onto</h4>
+<h2 id="rebase-onto">Rebase onto</h2>
 <p>Providing we have:</p>
 <pre><code>A--B--C--D--E master
 </code></pre>
@@ -163,22 +167,22 @@ git push --set-upstream origin new_branch
 commit B the newbase of commit D,  	making C go away. This looks like:</p>
 <pre><code>git rebase --onto B D~1
 </code></pre>
-<h4 id="automatically-push-without-setting-remote-branch-manually">Automatically push without setting remote branch manually</h4>
+<h2 id="automatically-push-without-setting-remote-branch-manually">Automatically push without setting remote branch manually</h2>
 <pre><code>git config --global push.default current
 alias push='push -u'
 </code></pre>
-<h4 id="set-mergetool-and-difftool">Set mergetool and difftool</h4>
+<h2 id="set-mergetool-and-difftool">Set mergetool and difftool</h2>
 <pre><code>git config --global merge.tool meld
 it config --global diff.tool meld
 </code></pre>
-<h4 id="remove-untracked-files">Remove untracked files:</h4>
+<h2 id="remove-untracked-files">Remove untracked files:</h2>
 <pre><code>git clean -n      #  will only show what will be removed with -f
 git clean -f      #  will remove
 </code></pre>
-<h4 id="reset-one-merge-result-single-file">Reset one merge result (single file)</h4>
+<h2 id="reset-one-merge-result-single-file">Reset one merge result (single file)</h2>
 <pre><code>git checkout -m filename.cpp
 </code></pre>
-<h4 id="change-all-commits-in-repository-to-new-author">Change all commits in repository to new author</h4>
+<h2 id="change-all-commits-in-repository-to-new-author">Change all commits in repository to new author</h2>
 <pre><code>git filter-branch --env-filter '
 WRONG_EMAIL=&quot;oldauthor@boss.com&quot;
 NEW_NAME=&quot;palucki&quot;

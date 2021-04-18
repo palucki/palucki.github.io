@@ -7,14 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 24 Feb 2021 23:41:29 +0100</lastBuildDate><atom:link href="https://palucki.github.io/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 19:47:36 +0200</lastBuildDate><atom:link href="https://palucki.github.io/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern design patterns</title>
+      <link>https://palucki.github.io/note/modern_design_patterns/</link>
+      <pubDate>Sun, 18 Apr 2021 19:47:36 +0200</pubDate>
+      
+      <guid>https://palucki.github.io/note/modern_design_patterns/</guid>
+      <description>Table of contents  Builder  Fluent interface Facets   Factory method Factory  Inner factory Factory vs Builder   Prototype Singleton  Singleton problems Monostate Multiton   Adapter Bridge  PIMPL as a Bridge implementation   Composite  Array backed properties   Decorator Proxy  Proxy vs Decorator   Command  CQS - Command Query Separation   Interpreter Iterator Mediator Strategy (policy) Template method Memento (token) Observer State Visitor  std::visit      First of all, modern design pattern follows all the software best practices (i.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;17</title>
+      <link>https://palucki.github.io/note/cpp17/</link>
+      <pubDate>Sun, 18 Apr 2021 19:29:08 +0200</pubDate>
+      
+      <guid>https://palucki.github.io/note/cpp17/</guid>
+      <description>Table of contents  Language elements  Nested namespaces Variable declaration in control statements constexpr if Structured bindings      Language elements Nested namespaces Instead of nesting the namespaces
+namespace A {namespace B {namespace C {// some code here}}} we can explicitly nest them
+namespace A::B::C {// some code here} Variable declaration in control statements Ability to declare variable that is used inside the control statement body.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;14</title>
+      <link>https://palucki.github.io/note/cpp14/</link>
+      <pubDate>Sun, 18 Apr 2021 19:29:06 +0200</pubDate>
+      
+      <guid>https://palucki.github.io/note/cpp14/</guid>
+      <description>Table of contents  Language elements  tuples getters improvements Generic lambdas &amp;amp;&amp;amp; init capture      Language elements tuples getters improvements ability to access element by type:
+std::get&amp;lt;double&amp;gt;(tuple)  if more than 1 element of this type - compiler error
+ Generic lambdas &amp;amp;&amp;amp; init capture Allow to use auto as parameter type
+[](const auto&amp;amp; lhs, const auto&amp;amp; rhs) {return lhs.length() &amp;lt; rhs.length();} Ability to init variable when capturing to lambda</description>
+    </item>
+    
+    <item>
+      <title>QML</title>
+      <link>https://palucki.github.io/note/qml/</link>
+      <pubDate>Tue, 06 Apr 2021 17:13:38 +0200</pubDate>
+      
+      <guid>https://palucki.github.io/note/qml/</guid>
+      <description>Table of contents  General concepts  Item Signal / slots Property system   Tips  How to add an image How to add new component? How to include Javascript file? How to use persistance?   Model View Delegate  Repeaters XmlModelList   Transforms / Animations / States &amp;amp; Transitions  Transforms Animations States / transitions   Controls / Widgets  Mouse Area Group box ComboBox BusyIndicator      General concepts Item Item is an abstract, invisible type, used to group objects, all QML objects inherits from it.</description>
+    </item>
+    
     <item>
       <title>Git tips &amp; tricks</title>
       <link>https://palucki.github.io/note/git/</link>
       <pubDate>Wed, 24 Feb 2021 23:41:29 +0100</pubDate>
       
       <guid>https://palucki.github.io/note/git/</guid>
-      <description>Table of contents  Fetch branch (not current) from remote repo (prepare for rebase):        Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin +youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:</description>
+      <description>Table of contents  Fetch branch (not current) from remote repo (prepare for rebase): Force push only your current branch: Rename local and remote branch Rebase onto Automatically push without setting remote branch manually Set mergetool and difftool Remove untracked files: Reset one merge result (single file) Change all commits in repository to new author    Fetch branch (not current) from remote repo (prepare for rebase): git fetch origin release:release  Force push only your current branch: git push origin +youBranchName  Rename local and remote branch # Rename branch locally git branch -m old_branch new_branch # Delete the old branch git push origin :old_branch # Push the new branch, set local branch to track the new remote git push --set-upstream origin new_branch  Rebase onto Providing we have:</description>
     </item>
     
     <item>

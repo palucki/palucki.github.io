@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Table of contents  Builder  Fluent interface Facets   Factory method Factory  Inner factory Factory vs Builder   Prototype Singleton  Singleton problems Monostate Multiton   Adapter Bridge  PIMPL as a Bridge implementation   Composite  Array backed properties   Decorator Proxy  Proxy vs Decorator   Command  CQS - Command Query Separation   Interpreter Iterator Mediator Strategy (policy) Template method Memento (token) Observer State Visitor  std::visit      First of all, modern design pattern follows all the software best practices (i." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://palucki.github.io/note/modern_design_patterns/" />
+
+
+    <title>
+        
+            Modern design patterns :: palucki  — blog &amp; knowledge base
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Modern design patterns">
+<meta itemprop="description" content="Table of contents  Builder  Fluent interface Facets   Factory method Factory  Inner factory Factory vs Builder   Prototype Singleton  Singleton problems Monostate Multiton   Adapter Bridge  PIMPL as a Bridge implementation   Composite  Array backed properties   Decorator Proxy  Proxy vs Decorator   Command  CQS - Command Query Separation   Interpreter Iterator Mediator Strategy (policy) Template method Memento (token) Observer State Visitor  std::visit      First of all, modern design pattern follows all the software best practices (i."><meta itemprop="datePublished" content="2021-04-18T19:47:36&#43;02:00" />
+<meta itemprop="dateModified" content="2021-04-18T19:47:36&#43;02:00" />
+<meta itemprop="wordCount" content="1491"><meta itemprop="image" content="https://palucki.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://palucki.github.io/"/>
+
+<meta name="twitter:title" content="Modern design patterns"/>
+<meta name="twitter:description" content="Table of contents  Builder  Fluent interface Facets   Factory method Factory  Inner factory Factory vs Builder   Prototype Singleton  Singleton problems Monostate Multiton   Adapter Bridge  PIMPL as a Bridge implementation   Composite  Array backed properties   Decorator Proxy  Proxy vs Decorator   Command  CQS - Command Query Separation   Interpreter Iterator Mediator Strategy (policy) Template method Memento (token) Observer State Visitor  std::visit      First of all, modern design pattern follows all the software best practices (i."/>
+
+
+
+
+    <meta property="og:title" content="Modern design patterns" />
+<meta property="og:description" content="Table of contents  Builder  Fluent interface Facets   Factory method Factory  Inner factory Factory vs Builder   Prototype Singleton  Singleton problems Monostate Multiton   Adapter Bridge  PIMPL as a Bridge implementation   Composite  Array backed properties   Decorator Proxy  Proxy vs Decorator   Command  CQS - Command Query Separation   Interpreter Iterator Mediator Strategy (policy) Template method Memento (token) Observer State Visitor  std::visit      First of all, modern design pattern follows all the software best practices (i." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://palucki.github.io/note/modern_design_patterns/" /><meta property="og:image" content="https://palucki.github.io/"/><meta property="article:section" content="note" />
+<meta property="article:published_time" content="2021-04-18T19:47:36&#43;02:00" />
+<meta property="article:modified_time" content="2021-04-18T19:47:36&#43;02:00" /><meta property="og:site_name" content="palucki" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-04-18 19:47:36 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">home/palucki</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/post/">Posts</a></li><li><a href="/project/">Projects</a></li><li><a href="/note/">Notepad</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://palucki.github.io/note/modern_design_patterns/">Modern design patterns</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <div class="toc">
+Table of contents
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#builder">Builder</a>
+      <ul>
+        <li><a href="#fluent-interface">Fluent interface</a></li>
+        <li><a href="#facets">Facets</a></li>
+      </ul>
+    </li>
+    <li><a href="#factory-method">Factory method</a></li>
+    <li><a href="#factory">Factory</a>
+      <ul>
+        <li><a href="#inner-factory">Inner factory</a></li>
+        <li><a href="#factory-vs-builder">Factory vs Builder</a></li>
+      </ul>
+    </li>
+    <li><a href="#prototype">Prototype</a></li>
+    <li><a href="#singleton">Singleton</a>
+      <ul>
+        <li><a href="#singleton-problems">Singleton problems</a></li>
+        <li><a href="#monostate">Monostate</a></li>
+        <li><a href="#multiton">Multiton</a></li>
+      </ul>
+    </li>
+    <li><a href="#adapter">Adapter</a></li>
+    <li><a href="#bridge">Bridge</a>
+      <ul>
+        <li><a href="#pimpl-as-a-bridge-implementation">PIMPL as a Bridge implementation</a></li>
+      </ul>
+    </li>
+    <li><a href="#composite">Composite</a>
+      <ul>
+        <li><a href="#array-backed-properties">Array backed properties</a></li>
+      </ul>
+    </li>
+    <li><a href="#decorator">Decorator</a></li>
+    <li><a href="#proxy">Proxy</a>
+      <ul>
+        <li><a href="#proxy-vs-decorator">Proxy vs Decorator</a></li>
+      </ul>
+    </li>
+    <li><a href="#command">Command</a>
+      <ul>
+        <li><a href="#cqs---command-query-separation">CQS - Command Query Separation</a></li>
+      </ul>
+    </li>
+    <li><a href="#interpreter">Interpreter</a></li>
+    <li><a href="#iterator">Iterator</a></li>
+    <li><a href="#mediator">Mediator</a></li>
+    <li><a href="#strategy-policy">Strategy (policy)</a></li>
+    <li><a href="#template-method">Template method</a></li>
+    <li><a href="#memento-token">Memento (token)</a></li>
+    <li><a href="#observer">Observer</a></li>
+    <li><a href="#state">State</a></li>
+    <li><a href="#visitor">Visitor</a>
+      <ul>
+        <li><a href="#stdvisit">std::visit</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<p>First of all, modern design pattern follows all the software best practices (i.e <a href="https://en.wikipedia.org/wiki/SOLID">S.O.L.I.D.</a>) and uses modern C++.</p>
+<h2 id="builder">Builder</h2>
+<p>When we have mutli-argument constructors, we should strive to replace them with piecewise object construction.
+A <em>Builder</em> is an object with functions to construct, add, etc. elements.
+To force the use of builder, we can set object construtors in private section.</p>
+<h3 id="fluent-interface">Fluent interface</h3>
+<p>Addition to the normal builder which allows to &ldquo;chain&rdquo; method invoications:</p>
+<pre><code>builder.createCar().addRoof(&quot;green&quot;).addWheels().replace(engine, newEngine).
+</code></pre>
+<p>It also allows to specify which calls can be joined and which can not.</p>
+<h3 id="facets">Facets</h3>
+<p>If creating a part is a complex thing, we can create several builders, ie. <code>withJob()</code>, <code>withId()</code></p>
+<h2 id="factory-method">Factory method</h2>
+<p>For simple solutions, we do not need a separate Buidler. The Factory Methods will be enough.
+Just make an object&rsquo;s constructor private / deleted and create static methods, which returns class object:</p>
+<pre><code>static Point fromPolar(float rho, float theta)
+static Point fromCarthesian(float x, float y)
+</code></pre>
+<p>then simply use:</p>
+<pre><code>auto p = Point::fromCarthesian(100, 200);
+</code></pre>
+<h2 id="factory">Factory</h2>
+<p>It is a way to overload constructor (because we provide different arguments and have different purposes)
+Not an Abstract Factory by meaning the GoF definition. Just a class with access to the other class members and responsible for creating them.
+Has a statich methods:</p>
+<pre><code>PointFactory::fromCarthesian
+PointFactory::fromPolar
+</code></pre>
+<p>needs to be friend of <code>Point</code> class, or the <code>Point</code> need to be public.</p>
+<h3 id="inner-factory">Inner factory</h3>
+<p><code>PointFactory</code> contained in <code>Point</code> class. Solves the access to member problem.</p>
+<h3 id="factory-vs-builder">Factory vs Builder</h3>
+<p>The difference between those two is in their purpose. The purpose of Builder is to create an element piece-by-piece.
+The intent of Factory is to create an element with a single call.</p>
+<h2 id="prototype">Prototype</h2>
+<p>Pattern used especially when cloning objects, when we need a deep copy.
+It serves the purpose of a template, which can be used and adjusted (customized).</p>
+<p>How to implement:</p>
+<ol>
+<li>Create and store an instance of a object which can be then cloned.
+(for example by serializing and deserializing)</li>
+</ol>
+<h2 id="singleton">Singleton</h2>
+<p>Pattern which makes sure that only one instance of an objects will be ever created. Used when:</p>
+<ul>
+<li>constructor is expensive (a lot of operation, I/O or hardware access etc.)</li>
+<li>we want to be sure that only one copy will be created</li>
+<li>we want to leverage lazy initialization or thread safety</li>
+</ul>
+<p>The simplest approach is to make constructor private, copy ctor and assignment operator -&gt; deleted.
+Then all we need is to create <code>get()</code> or <code>instance()</code> method which will return the object.</p>
+<p>SingletonObject&amp; instance() {
+static SingletonObject instnace;
+return instance;
+}</p>
+<blockquote>
+<p>this is guaranteed to be thread-safe in C++11</p>
+</blockquote>
+<h3 id="singleton-problems">Singleton problems</h3>
+<p>Singleton tightly couples application with resource / database it represents. It is hard to test such a solution.
+The solution for this issue it o use <code>dependency injection</code> pattern. It is a mechanism where in one place we inject dependency instead 
+of our real object. For example. with database access singleton, we need to create a constructor, which takes <code>DBInterface</code> 
+and later, in tests use DummyDatabase, and in production code use RealDatabase.
+And use interface in all places.</p>
+<h3 id="monostate">Monostate</h3>
+<p>Singletion variation, allows to create several instances, but they all share common data (for instance static member in class).</p>
+<blockquote>
+<p>It is not recommended to use that pattern</p>
+</blockquote>
+<h3 id="multiton">Multiton</h3>
+<p>Singleton variation, allows to create singletons for different types (each type has own singleton).</p>
+<h2 id="adapter">Adapter</h2>
+<p>This pattern allows us to adjust existing <code>interface X</code> to match the specific needs of our system (which expects <code>interface Y</code>).</p>
+<blockquote>
+<p>If Adapter needs a lot of data / objects inside it&rsquo;s worth considering <em>caching</em></p>
+</blockquote>
+<h2 id="bridge">Bridge</h2>
+<p>Allows us to avoid <em>carthesian product</em> in class design. Separates interface from its implementation.
+The approach here is to pass reference to a hierearchy of objects straight to the other hierarchy, and use it there (instead of inheriting).</p>
+<h3 id="pimpl-as-a-bridge-implementation">PIMPL as a Bridge implementation</h3>
+<p>Pointer to implementation, which allows us to hide the whole of implementation in .cpp file.</p>
+<ul>
+<li>Clients depend only on header and do not need to recompile when our implementation change.</li>
+<li>Improves compilation speed.</li>
+</ul>
+<h2 id="composite">Composite</h2>
+<p>Provides uniform API (interface) to treat single objects and group of objects in the same way.
+For example, consider <code>Shape</code> and <code>Collection&lt;Shape&gt;</code>.</p>
+<p>If single object requires <code>begin()</code> or <code>end()</code> methods, they can be implemented as:</p>
+<pre><code>begin() { return this;} 
+end() {return this+1;}
+</code></pre>
+<h3 id="array-backed-properties">Array backed properties</h3>
+<p>Gather all properties used in <code>std::array</code>, add enum which hold their names with the last element denoting the number of elements.
+Then getterse and setters will be simply:</p>
+<pre><code>return array[property_name];
+</code></pre>
+<h2 id="decorator">Decorator</h2>
+<p>Allows to add features to existing objects without modifing their interfaces by wrapping.</p>
+<pre><code>ColouredShape{Circle, &quot;red&quot;}
+</code></pre>
+<p>or</p>
+<pre><code>TransparentShape{ColoredSHape{Square, 10}, &quot;blue&quot;}, 128}
+</code></pre>
+<h2 id="proxy">Proxy</h2>
+<p>A class that acts as an interface to a particular resorce (may be remote, expensive, require logging etc). 
+Acts as local object, in fact under the hood is remote object (communication proxy).</p>
+<p><em>Smart pointers</em> are example of such a proxy, behaves as ordinary pointers, but have a lot of added functionality.</p>
+<p>Examples: property proxy, virtual proxy, communcation proxy.</p>
+<h3 id="proxy-vs-decorator">Proxy vs Decorator</h3>
+<ul>
+<li>Proxy uses the same interface and set of features, Decorator has the same interface and features.</li>
+<li>Decorator keeps reference to the decorated objects, Proxy - not necessarily.</li>
+</ul>
+<h2 id="command">Command</h2>
+<p>An object encapsulating a command (command encapsulating), which can later be replayed, serialized, saved, undone etc.
+Allows to create macros (chaing of commands).</p>
+<h3 id="cqs---command-query-separation">CQS - Command Query Separation</h3>
+<p>Command - Do
+Query - Ask</p>
+<p>Do not mix them together.</p>
+<h2 id="interpreter">Interpreter</h2>
+<p>Bascially converts string to other, object oriented structure.
+Performs 2 steps:</p>
+<ul>
+<li>lexing - tokenize</li>
+<li>parsing - transform set of tokens into hierarchical, logical strucutre</li>
+</ul>
+<h2 id="iterator">Iterator</h2>
+<p>Alows traversing collection.
+Has <code>operator!=</code> and <code>operator++</code> defined</p>
+<h2 id="mediator">Mediator</h2>
+<p>Central component which is a broker in communication between objects.
+Objects need to have access to that (either as regference, pointer).</p>
+<p>Example:</p>
+<p>ChatRoom which serves Person objects.</p>
+<p>Another name: EventBroker</p>
+<h2 id="strategy-policy">Strategy (policy)</h2>
+<p>Allows to specify behavior at runtime, or at compile time.</p>
+<h2 id="template-method">Template method</h2>
+<p>Similiar to strategy, but uses inheritance instead of composition.
+Defines an algorithm with points of actions which are extended in derived clases.</p>
+<p>Guarantees that operations are taken in correct order.</p>
+<h2 id="memento-token">Memento (token)</h2>
+<p>Allows to save system state and restore it later. Similiar to Command, but used to keep linear history.
+Creates snapshots (instead of a line of undo / redo operations).
+Needs to keep the whole state, so it doesn&rsquo;t make sense when the state is huge and expensve.</p>
+<h2 id="observer">Observer</h2>
+<p>Allows to subscribe &amp; listen to events and notify interested parties.</p>
+<ul>
+<li>Event / Subscriber</li>
+<li>Signal / Slot</li>
+<li>Observer / Observable</li>
+</ul>
+<h2 id="state">State</h2>
+<p>Pattern which provides that the behavior of an objects depends on its state.
+The component which handles state transitions is called <em>State Machine</em>.
+The classic aproach is to define a state, and all methods defined (for example onStart(), onExit(), onTimeout())</p>
+<p>Nice implementation is done with a set of behaviors:</p>
+<pre><code>std::map&lt;State, std::vector&lt;std::pair&lt;Transition, State&gt;&gt;&gt; rules
+</code></pre>
+<p>It allows to specify all the transitions etc. and then use it like this:</p>
+<pre><code>auto nextState = rules[currentState][input].second
+</code></pre>
+<p>In Boost, there is a Meta State Machine.</p>
+<h2 id="visitor">Visitor</h2>
+<p>Pattern allowing the component to traverse / visit the whole hierarchy of inheritance.
+The hierarchy needs to implement <code>accept(visitor)</code> method, which performs:</p>
+<pre><code>visitor.visit(this);
+</code></pre>
+<p>And the visitor needs <code>visit()</code> method with overload for every class in the hierarchy.</p>
+<p>Also called: <em>double dispatch</em></p>
+<h3 id="stdvisit">std::visit</h3>
+<p>Modern C++ implementation of visitor:
+<code>std::variant&lt;string, int, ... &gt;</code> and <code>std:: visit</code></p>
+<p>Visitor requires operator() for all types visited:</p>
+<pre><code>operator()(const string&amp; s)
+operator()(const int&amp; i)
+</code></pre>
+<p>Example implementation:</p>
+<pre><code>struct Triangle {
+	void Render() { cout &lt;&lt; &quot;Drawing a triangle!\n&quot;; }
+};
+
+struct Polygon {
+	void Render() { cout &lt;&lt; &quot;Drawing a polygon!\n&quot;; }
+};
+
+struct Sphere {
+	void Render() { cout &lt;&lt; &quot;Drawing a sphere!\n&quot;; }
+};
+
+using Renderable = std::variant&lt;Triangle, Polygon, Sphere&gt;;
+std::vector&lt;Renderable&gt; vecRender {
+        Polygon(), Triangle(), Sphere(), Triangle()
+	};
+
+auto CallRender = (auto&amp; obj) { obj.Render(); };
+
+for (auto&amp; obj : vecRende )
+	std::visit(CallRender, obj);
+</code></pre>
+<h4 id="observations">Observations</h4>
+<p>Here are some observations we can make: (for <code>std::visit approach</code>)</p>
+<ul>
+<li>There&rsquo;s no base class, types inside a variant might be unrelated.
+We can easily add a new visitor, without changing the implementation of classes.</li>
+</ul>
+<blockquote>
+<p>For example, we can implement a visitor that scans the objects and sorts them according to Z-order. 
+In regular polymorphism, adding a new virtual method is more problematic, 
+as you&rsquo;d have to update the whole class hierarchy.</p>
+</blockquote>
+<ul>
+<li>It&rsquo;s harder to add new types: you&rsquo;d have to extend the Renderable type and also each visitor to support the new type. That&rsquo;s much easier with regular polymorphism.
+Since std::variant is the size of the largest type, then we might waste some space when types differ a lot. For example, when one type holds 128 bytes, while the other is only 16 bytes.
+We can use value semantics rather than pointer semantics, so we can have benefits of a contiguous memory block and possible cache friendliness.</li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://palucki.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-114543867-3 ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
