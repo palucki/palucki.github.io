@@ -3,18 +3,17 @@
         <title>My cool site</title>
         <link>https://palucki.github.io/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 20 May 2022 20:11:32 &#43;0200</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Oct 2022 21:04:32 &#43;0200</lastBuildDate>
             <atom:link href="https://palucki.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Hello World</title>
     <link>https://palucki.github.io/posts/hello-world/</link>
-    <pubDate>Fri, 20 May 2022 20:11:32 &#43;0200</pubDate>
+    <pubDate>Sat, 15 Oct 2022 21:04:32 &#43;0200</pubDate>
     <author>palucki</author>
     <guid>https://palucki.github.io/posts/hello-world/</guid>
     <description><![CDATA[Hello World! Or maybe rather:
 std::cout &lt;&lt; &#34;Hello World\n&#34; Welcome to my personal blog!
-Why I decided to start a blog? I always wanted to share my projects, knowledge, tips&amp;tricks etc. with others. Also, I wanted to have my personal space, which serves the purpose of my CV. Is there a better way to do this than starting a blog?
-Why Hugo? I wanted to have my content organized, portable&hellip; Static site generator sounds like a silver bullet for my needs.]]></description>
+Why I decided to start a blog? Creating my own space on the web have always been my dream. I always wanted to share my projects, knowledge, tips&amp;tricks or unusual experiences with others. Also, I wanted to have my kind-of portfolio online, which serves the purpose of my CV. Is there a better way to do this than starting a blog?]]></description>
 </item>
 </channel>
 </rss>
