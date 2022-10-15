@@ -1,5 +1,8 @@
 baseURL = "https://palucki.github.io/"
 
+# output dir
+publishDir = "docs"
+
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
