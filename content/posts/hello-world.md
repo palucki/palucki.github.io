@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 date: 2022-05-20T20:11:32+02:00
-draft: true
+draft: false
 tags: [hugo,obsidian]
 categories: [general]
 ---

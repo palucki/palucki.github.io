@@ -1,10 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "https://palucki.github.io/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
 # website title
-title = "My New Hugo Site"
+title = "My cool site"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -13,9 +13,9 @@ languageName = "English"
 
 # Author config
 [author]
-  name = "xxxx"
+  name = "palucki"
   email = ""
-  link = ""
+  link = "palucki.github.io"
 
 # Menu config
 [menu]
@@ -55,7 +55,7 @@ languageName = "English"
     noClasses = false
 
 [params.social]
-    GitHub = "palucki"
     Linkedin = "piotr-palucki"
+    GitHub = "palucki"
     Instagram = "piotrpaluckibas"
 
