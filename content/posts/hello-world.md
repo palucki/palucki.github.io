@@ -16,6 +16,8 @@ std::cout << "Hello World\n"
 
 Welcome to my personal blog!
 
+{{< figure src="/images/hobbit.gif" >}}
+
 ### Why I decided to start a blog?
 
 Creating my own space on the web have always been my dream.
@@ -44,5 +46,7 @@ I am going to iteratively add new features and content to this blog. Some improv
 - completed projects 
 - search functionality
 - content, content and even more content
+
+I hope youwill be tolerative, since this is my first blog ever :)
 
 Keep yours fingers crossed and stay tuned!
